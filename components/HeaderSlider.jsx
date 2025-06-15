@@ -6,27 +6,27 @@ const HeaderSlider = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Experience Pure Sound - Your Perfect Headphones Awaits!",
+      title: "Experience Pure Fashion - Your Perfect Attire Awaits!",
       offer: "Limited Time Offer 30% Off",
       buttonText1: "Buy now",
       buttonText2: "Find more",
-      imgSrc: assets.header_headphone_image,
+      imgSrc: assets.model1,
     },
     {
       id: 2,
-      title: "Next-Level Gaming Starts Here - Discover PlayStation 5 Today!",
+      title: "Next-Level Trend Starts Here - Discover Top Dresses Today!",
       offer: "Hurry up only few lefts!",
       buttonText1: "Shop Now",
       buttonText2: "Explore Deals",
-      imgSrc: assets.header_playstation_image,
+      imgSrc: assets.model3,
     },
     {
       id: 3,
-      title: "Power Meets Elegance - Apple MacBook Pro is Here for you!",
+      title: "Power Meets Elegance - Top Quality Clothes is Here for you!",
       offer: "Exclusive Deal 40% Off",
       buttonText1: "Order Now",
       buttonText2: "Learn More",
-      imgSrc: assets.header_macbook_image,
+      imgSrc: assets.model2,
     },
   ];
 
@@ -54,7 +54,7 @@ const HeaderSlider = () => {
         {sliderData.map((slide, index) => (
           <div
             key={slide.id}
-            className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#E6E9F2] py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full"
+            className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#E6E9F2] pt-8 pb-0 md:px-14 px-5 mt-6 rounded-xl min-w-full"
           >
             <div className="md:pl-8 mt-10 md:mt-0">
               <p className="md:text-base text-orange-600 pb-1">{slide.offer}</p>
@@ -73,7 +73,10 @@ const HeaderSlider = () => {
             </div>
             <div className="flex items-center flex-1 justify-center">
               <Image
-                className="md:w-72 w-48"
+                // className="md:w-72 w-48"
+                className={`${
+                  index === 1 ? "md:w-60 w-40 " : "md:w-72 w-48"
+                  } transition-all duration-300`}
                 src={slide.imgSrc}
                 alt={`Slide ${index + 1}`}
               />
